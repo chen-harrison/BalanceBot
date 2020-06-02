@@ -198,8 +198,8 @@ void balancebot_controller()
 	mb_odometry_update(&mb_odometry, &mb_state);
 
 	// update heading angle psi with filtering the sensor reading 
-    // mb_state.psi = mb_heading_go_march();     // Gyrodometry Filtering
-    mb_state.psi = mb_heading_kf_march();       // Kalman Filtering 
+    // mb_state.psi = mb_heading_go_march();     // gyrodometry filtering
+    mb_state.psi = mb_heading_kf_march();       // kalman filtering 
 	// mb_state.psi = mb_state.psi_imu;
 
 	mb_state.encoder_pre[0] = mb_state.left_encoder;
@@ -207,7 +207,7 @@ void balancebot_controller()
 
 	if (rc_get_state()!=EXITING) {	// controller engages only when the state is at RUNNING 
     	
-		// Calculate controller outputs
+		// calculate controller outputs
     	if (!mb_setpoints.manual_ctl) {
 			// mb_auto_update_setpoint_openloop();
 			// mb_auto_update_psi_closeloop();
