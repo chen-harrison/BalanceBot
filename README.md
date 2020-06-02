@@ -18,13 +18,17 @@ This project involved the implementation of the functionality and behavior of a 
 - Outer loop: wheel displacement (phi) PID controller
 - Moving forwards or backwards relied on moving the reference wheel displacement ahead of or behind the current state
 
-<img src="balance.JPG" width="720">
+<p align="center">
+  <img src="balance.JPG" width="720">
+</p>
 
 ### *Part 3: Manual and Heading Control*
 - Added heading angle (lambda) PID controller that runs parallel to the balance controller and controls direction of movement/steering
 - Manual control programmed in that allows BalanceBot to be steered via controller
 
-<img src="heading.JPG" width="720">
+<p align="center">
+  <img src="heading.JPG" width="720">
+</p>
 
 ### *Part 4: Odometry and Motion Control*
 - Odometry functions added to locate robot based on wheel displacement, as read by wheel encoders
