@@ -19,7 +19,7 @@ This project involved the implementation of the functionality and behavior of a 
   - Parallel loop: heading angle (psi) PID controller
 
 <p align="center">
-  <img src="controller.jpg" width="720">
+  <img src="media/controller.jpg" width="720">
 </p>
 
 ### *Manual & Autonomous Control*
@@ -33,7 +33,7 @@ This project involved the implementation of the functionality and behavior of a 
   - Kalman filter uses odometry as the update step and gyroscope as the measurement for correction
 
 <p align="center">
-  <img src="odometry.jpg" width="720">
+  <img src="media/odometry.jpg" width="720">
 </p>
 <p align="right">
   <sup>(Source: ROB 550 lecture slides)</sup>
