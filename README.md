@@ -32,6 +32,10 @@ This project involved the implementation of the functionality and behavior of a 
   - Gyrodometry algorithm corrects odometry heading angle estiamtes by monitoring large discrepancies between it and gyroscope data
   - Kalman filter uses odometry as the update step and gyroscope as the measurement for correction
 
+<p align="center">
+  <img src="odometry.jpg" width="720">
+</p>
+
 
 ## Competition/Challenges
 At the end of the project period, all teams in the class pitted their robots against one another in four different events. Hence, functions that would allow the BalanceBot to complete these tasks were created. Our team successfully completed all four tasks.
