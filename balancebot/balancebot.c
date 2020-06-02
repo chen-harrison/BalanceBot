@@ -186,21 +186,21 @@ void balancebot_controller()
 	mb_state.right_encoder = rc_encoder_eqep_read(2);
 
 	// calculate phi 
-	mb_state.left_phi =  CL * ((mb_state.left_encoder)/ ENCODER_RES ) * 2.0 * M_PI / GEAR_RATIO;
-    mb_state.right_phi = CR * ((mb_state.right_encoder)/ ENCODER_RES ) * 2.0 * M_PI / GEAR_RATIO;
+	mb_state.left_phi = CL * ((mb_state.left_encoder) / ENCODER_RES ) * 2.0 * M_PI / GEAR_RATIO;
+    mb_state.right_phi = CR * ((mb_state.right_encoder) / ENCODER_RES ) * 2.0 * M_PI / GEAR_RATIO;
     mb_state.phi = (mb_state.right_phi + (-mb_state.left_phi))/2.0;
 	
 	// calculate wheel speed 
-	mb_state.omega[0] = ((mb_state.left_encoder-mb_state.encoder_pre[0])/ ENCODER_RES ) * 2.0 * M_PI / DT / GEAR_RATIO;
-	mb_state.omega[1] = -( (mb_state.right_encoder-mb_state.encoder_pre[1])/ ENCODER_RES ) * 2.0 * M_PI / DT / GEAR_RATIO;
+	mb_state.omega[0] = ((mb_state.left_encoder-mb_state.encoder_pre[0]) / ENCODER_RES ) * 2.0 * M_PI / DT / GEAR_RATIO;
+	mb_state.omega[1] = -( (mb_state.right_encoder-mb_state.encoder_pre[1]) / ENCODER_RES ) * 2.0 * M_PI / DT / GEAR_RATIO;
 	
 	// Update odometry 
 	mb_odometry_update(&mb_odometry, &mb_state);
 
 	// update heading angle psi with filtering the sensor reading 
-    //mb_state.psi = mb_heading_go_march();       // Gyrodometry Filtering
+    // mb_state.psi = mb_heading_go_march();     // Gyrodometry Filtering
     mb_state.psi = mb_heading_kf_march();       // Kalman Filtering 
-	//mb_state.psi = mb_state.psi_imu;
+	// mb_state.psi = mb_state.psi_imu;
 
 	mb_state.encoder_pre[0] = mb_state.left_encoder;
 	mb_state.encoder_pre[1] = mb_state.right_encoder;
@@ -209,11 +209,12 @@ void balancebot_controller()
     	
 		// Calculate controller outputs
     	if (!mb_setpoints.manual_ctl) {
-			//mb_auto_update_setpoint_openloop();
-			//mb_auto_update_psi_closeloop();
-			//mb_auto_update_setpoint_closeloop();
+			// mb_auto_update_setpoint_openloop();
+			// mb_auto_update_psi_closeloop();
+			// mb_auto_update_setpoint_closeloop();
+			
 			mb_auto_debug();
-			//mb_drag_race();
+			// mb_drag_race();
 		}
 
     	if (mb_setpoints.manual_ctl) {
@@ -262,7 +263,8 @@ void* setpoint_control_loop(void* ptr)
 				mb_dsminput.stick_heading = rc_dsm_ch_normalized(DSM_CH_HEADING) / 130.0;
 		}		
 		
-		if (fabs(mb_dsminput.stick_mode) < 0.5) {		// manual control 		
+		// manual control 
+		if (fabs(mb_dsminput.stick_mode) < 0.5) {				
 			
 			// setpoint updated by dsm stick input  
 			mb_setpoints.manual_ctl = 1;
@@ -303,31 +305,21 @@ void* setpoint_control_loop(void* ptr)
 			
 			mb_setpoints.x = (0.0 + SEGMENT_LENGTH);
 			
-			// UNCOMMENT IF DRAG RACE
-			//mb_setpoints.x += 10.5;				
+			// UNCOMMENT NEXT LINE IF DRAG RACE
+			// mb_setpoints.x += 10.5;				
 			mb_setpoints.y = 0.0;
 
 			//mb_setpoints.y = 0.0; 
-			//printf("UMBmark start here\n");
 			//mb_state.u[0] = 0.2;
 			//mb_state.u[1] = 0.7;
 			mb_setpoints.psi_instant_d = atan2(-(mb_state.y - mb_setpoints.y), -(mb_state.x - mb_setpoints.x));
-
 			mb_dsminput.enter_auto = 1;
-			
-			//rc_encoder_eqep_write(1, 0);
-			//rc_encoder_eqep_write(2, 0);
 		} 	
 			
 		if (mb_dsminput.stick_mode > 0.5) {
 			rc_set_state(EXITING); 
-		}
+		}	
 
-		//printf("mode: %f | forward: %f | turn: %f \n", mode,forward,turn);
-	
-
-		//mb_setpoints.theta_d = VERICAL_PITCH; 
-		//printf("\n");
 		rc_nanosleep(1E9 / RC_CTL_HZ);
 	}
 	
