@@ -157,9 +157,7 @@ int test_motor_duty(int motor, int polarity, float duty, float dtime_s)
 
     if (encoder_ticks < 10.0 && encoder_ticks > -10.0) {
         return -1;
-    }
-
-    else {
+    } else {
         return 1;
     }
 }
