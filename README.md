@@ -3,7 +3,7 @@ The BalanceBot project is one of three projects I took part in for the Robotic S
 
 
 ## Functionality
-This project involved the implementation of the functionality and behavior of a BalanceBot, a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU.
+This project involved the implementation of the functionality and behavior of a BalanceBot, a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) in C was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU.
 
 ### *System Modeling*
 - Defined relevant parameters such as pins, chips, channels, polarities, gear ratios, resolutions, and measurements
