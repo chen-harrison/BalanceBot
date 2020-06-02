@@ -36,7 +36,7 @@ This project involved the implementation of the functionality and behavior of a 
 
 
 ## Competition/Challenges
-At the end of the project period, all teams in the class pitted their BalanceBots against one another in four different events, so the necessary functions were added to accomodate them.
+At the end of the project period, all teams in the class pitted their robots against one another in four different events. Hence, functions that would allow the BalanceBot to complete these tasks were created. Our team successfully completed all four tasks.
 
 ### *Event 1: Balancing on the Mark*
 Bot must stay balanced within 10cm of a target point for 20 seconds, and upright when external forces/distrubances are applied.
