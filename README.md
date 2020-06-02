@@ -35,6 +35,9 @@ This project involved the implementation of the functionality and behavior of a 
 <p align="center">
   <img src="odometry.jpg" width="720">
 </p>
+<p align="right">
+  <sup>(Source: ROB 550 lecture slides)</sup>
+</p>
 
 
 ## Competition/Challenges
