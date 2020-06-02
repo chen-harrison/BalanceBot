@@ -6,31 +6,28 @@ The BalanceBot project is one of three projects I took part in for the Robotic S
 This project involved the implementation of the functionality and behavior of a BalanceBot, a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) in C was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU.
 
 ### *System Modeling*
-- **``common/mb_defs.h``** - Defined relevant parameters such as pins, chips, channels, polarities, gear ratios, resolutions, and measurements
-- **``common/mb_motor.c``** - Created functions that initalize, set velocity, and read velocity for the wheels using PWM and GPIO functions in RCL
-- **``measure_moments/measure_moments.c``** - Wrote functions to read and store gyroscope, accelerometer, and Euler angle data off of the IMU
+- ``common/mb_defs.h`` - relevant parameters such as pins, chips, channels, polarities, gear ratios, resolutions, and measurements
+- ``common/mb_motor.c`` - functions that initalize, set velocity, and read velocity for the wheels using PWM and GPIO functions in RCL
+- ``measure_moments/measure_moments.c`` - functions to read and store gyroscope, accelerometer, and Euler angle data off of the IMU
   - Used aforementioned data to calculate the moments of inertia about the x-, y-, and z-axes
-- **``measure_motors/measure_motors.c``** - Tested and calculated motor parameters like coil resistance, no load speed, motor constant, stall torque, etc.
+- ``measure_motors/measure_motors.c`` - functions used to calculate motor parameters like coil resistance, no load speed, motor constant, stall torque, etc.
 
-### *Balance Controller*
-- **``common/mb_controller.c``** - Implemented two PID controllers used to balance the robot upright, with reference wheel displacement as the output
+### *Balance & Heading Controller*
+- ``common/mb_controller.c`` - implemented two PID controllers used to balance the robot upright, with reference wheel displacement as the output
   - Inner loop: body angle (theta) PID controller
   - Outer loop: wheel displacement (phi) PID controller
-- Moving forwards or backwards relied on moving the reference wheel displacement ahead of or behind the current state
-
-<p align="center">
-  <img src="balance.JPG" width="720">
-</p>
-
-### *Manual and Heading Control*
-- Added heading angle (lambda) PID controller that runs parallel to the balance controller and controls direction of movement/steering
-- Manual control programmed in that allows BalanceBot to be steered via controller
+  - Parallel loop: heading angle (psi) PID controller
 
 <p align="center">
   <img src="heading.JPG" width="720">
 </p>
 
-### *Odometry and Motion Control*
+### *Manual & Autonomous Control*
+- ``balancebot/balancebot.c`` - manual and autonomous modes determine whether robot takes in steering inputs from controller or executes autonomous task, per competition tasks
+  - Manual: increments reference wheel position and heading angle according to two directional sticks on controller
+  - Autonomous: sets a destination point at the end of desired trajectory vector, then increments reference wheel position and heading angle values to travel along it
+
+### *Odometry & Motion Control*
 - Odometry functions added to locate robot based on wheel displacement, as read by wheel encoders
 - Gyrodometry algorithm utilized to mitigate error caused from pure odometry imprecision, leading to more accurate heading angle/position estimates
 
