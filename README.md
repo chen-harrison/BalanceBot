@@ -38,14 +38,14 @@ This project involved the implementation of the functionality and behavior of a 
 ## Competition/Challenges
 At the end of the project period, all teams in the class pitted their robots against one another in four different events. Hence, functions that would allow the BalanceBot to complete these tasks were created. Our team successfully completed all four tasks.
 
-### *Event 1: Balancing on the Mark*
+### *Balancing on the Mark*
 Bot must stay balanced within 10cm of a target point for 20 seconds, and upright when external forces/distrubances are applied.
 
-### *Event 2: 4x4 Left Turns*
+### *4x4 Left Turns*
 Drive along the edges of a 1m square for four full laps while balancing and not crossing over.
 
-### *Event 3: Straight Line Drag Racing*
+### *Straight Line Drag Racing*
 Race for 11m autonomous as fast as possible, stopping within a 1m stop zone at the end, and staying balanced for 5 seconds.
 
-### *Event 4: Manual Obstacle Course*
+### *Manual Obstacle Course*
 Using manual control, steer your robot through a series of gates in two different obstacle courses, one easier and one more difficult.
