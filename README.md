@@ -19,7 +19,7 @@ This project involved the implementation of the functionality and behavior of a 
   - Parallel loop: heading angle (psi) PID controller
 
 <p align="center">
-  <img src="heading.JPG" width="720">
+  <img src="controller.jpg" width="720">
 </p>
 
 ### *Manual & Autonomous Control*
