@@ -13,9 +13,9 @@ This project involved the implementation of the functionality and behavior of a 
 - ``measure_motors/measure_motors.c`` : functions used to calculate motor parameters like coil resistance, no load speed, motor constant, stall torque, etc.
 
 ### *Balance & Heading Controller*
-- ``common/mb_controller.c`` : implemented two PID controllers used to balance the robot upright, with reference wheel displacement as the output
+- ``common/mb_controller.c`` : implemented two PID controllers used to balance the robot upright, with reference wheel position as the output
   - Inner loop: body angle (theta) PID controller
-  - Outer loop: wheel displacement (phi) PID controller
+  - Outer loop: wheel position (phi) PID controller
   - Parallel loop: heading angle (psi) PID controller
 
 <p align="center">
@@ -28,7 +28,7 @@ This project involved the implementation of the functionality and behavior of a 
   - Autonomous: sets a destination point at the end of desired trajectory vector, then increments reference wheel position and heading angle values to travel along it
 
 ### *Odometry & Motion Control*
-- ``common/odometry.c`` : odometry functions added to locate robot based on wheel displacement, as read by wheel encoders
+- ``common/odometry.c`` : odometry functions added to locate robot based on wheel position, as read by wheel encoders
   - Gyrodometry algorithm corrects odometry heading angle estiamtes by monitoring large discrepancies between it and gyroscope data
   - Kalman filter uses odometry as the update step and gyroscope as the measurement for correction
 
