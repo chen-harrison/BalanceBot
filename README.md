@@ -46,6 +46,7 @@ This project involved the implementation of the functionality and behavior of a 
   - **Gyrodometry** algorithm corrects odometry heading angle estiamtes by monitoring large discrepancies between it and gyroscope data
   - **Kalman filter** uses odometry as the update step and gyroscope as the measurement for correction
 
+<br>
 <p align="center">
   <img src="media/compare.jpg" width="480">
 </p>
