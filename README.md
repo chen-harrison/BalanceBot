@@ -35,10 +35,6 @@ This project involved the implementation of the functionality and behavior of a 
   - Autonomous: sets a destination point at the end of desired trajectory vector, then increments reference wheel position and heading angle values to travel along it
 
 ### *Odometry & Motion Control*
-- ``common/odometry.c`` : odometry functions added to locate robot based on wheel position, as read by wheel encoders
-  - Gyrodometry algorithm corrects odometry heading angle estiamtes by monitoring large discrepancies between it and gyroscope data
-  - Kalman filter uses odometry as the update step and gyroscope as the measurement for correction
-
 <p align="center">
   <img src="media/odometry.jpg" width="720">
 </p>
@@ -46,6 +42,13 @@ This project involved the implementation of the functionality and behavior of a 
   <sup>(Source: ROB 550 lecture slides)</sup>
 </p>
 
+- ``common/odometry.c`` : odometry functions added to locate robot based on wheel position, as read by wheel encoders
+  - **Gyrodometry** algorithm corrects odometry heading angle estiamtes by monitoring large discrepancies between it and gyroscope data
+  - **Kalman filter** uses odometry as the update step and gyroscope as the measurement for correction
+
+<p align="center">
+  <img src="media/compare.jpg" width="480">
+</p>
 
 ## Competition/Challenges
 At the end of the project period, all teams in the class pitted their robots against one another in four different events. Hence, functions that would allow the BalanceBot to complete these tasks were created. Our team successfully completed all four tasks.
