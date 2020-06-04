@@ -13,13 +13,19 @@ This project involved the implementation of the functionality and behavior of a 
 - ``measure_motors/measure_motors.c`` : functions used to calculate motor parameters like coil resistance, no load speed, motor constant, stall torque, etc.
 
 ### *Balance & Heading Controller*
+<p align="center">
+  <img src="media/controller.jpg" width="720">
+</p>
+
 - ``common/mb_controller.c`` : implemented two PID controllers used to balance the robot upright, with reference wheel position as the output
   - Inner loop: body angle (theta) PID controller
   - Outer loop: wheel position (phi) PID controller
   - Parallel loop: heading angle (psi) PID controller
 
 <p align="center">
-  <img src="media/controller.jpg" width="720">
+  <img src="media/theta.jpg" width="300">
+  <img src="media/phi.jpg" width="300">
+  <img src="media/psi.jpg" width="300">
 </p>
 
 ### *Manual & Autonomous Control*
@@ -46,6 +52,10 @@ At the end of the project period, all teams in the class pitted their robots aga
 - ***Balancing on the Mark:*** autonomously stay balanced within 10cm of a target point for 20 seconds, and upright when external forces/disturbances are applied
 
 - ***4x4 Left Turns:*** autonomously drive along the edges of a 1m square for four full laps while balancing and not crossing over
+
+<p align="center">
+  <img src="media/4x4.jpg" width="480">
+</p>
 
 - ***Straight Line Drag Racing:*** autonomously drive straight for 11m as fast as possible, stopping within a 1m stop zone at the end, and staying balanced for 5 seconds
 
