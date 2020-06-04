@@ -22,6 +22,7 @@ This project involved the implementation of the functionality and behavior of a 
   - Outer loop: wheel position (phi) PID controller
   - Parallel loop: heading angle (psi) PID controller
 
+<br>
 <p align="center">
   <img src="media/theta.jpg" width="280">
   <img src="media/phi.jpg" width="280">
