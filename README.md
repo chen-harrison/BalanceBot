@@ -17,7 +17,7 @@ This project involved the implementation of the functionality and behavior of a 
   <img src="media/controller.jpg" width="720">
 </p>
 
-- ``common/mb_controller.c`` : implemented two PID controllers used to balance the robot upright, with reference wheel position as the output
+- ``common/mb_controller.c`` : implemented two PID controllers used to balance the robot upright, and a third parallel PID controller to control direction
   - Inner loop: body angle (theta) PID controller
   - Outer loop: wheel position (phi) PID controller
   - Parallel loop: heading angle (psi) PID controller
