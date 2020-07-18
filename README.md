@@ -1,5 +1,5 @@
 # BalanceBot
-The BalanceBot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. It was done with a two other teammates, Ziyue Zhou and Yufei Zhu.
+The BalanceBot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. It was carried out with a two other teammates, Ziyue Zhou and Yufei Zhu.
 
 
 ## Functionality
