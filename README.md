@@ -1,9 +1,11 @@
-# BalanceBot
-The BalanceBot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. It was carried out with two other teammates, Ziyue Zhou and Yufei Zhu.
+# Balancebot
+The Balancebot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. It was carried out with two other teammates, Ziyue Zhou and Yufei Zhu.
+
+This project involved the implementation of the functionality and behavior of a Balancebot, a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) in C was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU.
 
 
-## Functionality
-This project involved the implementation of the functionality and behavior of a BalanceBot, a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) in C was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU.
+## Part 1: Balancing
+The first part of the project involved measuring and characterizing the robot in order to inform the development of the PID controllers used to keep it upright.
 
 ### *System Modeling*
 - ``common/mb_defs.h`` : relevant parameters such as pins, chips, channels, polarities, gear ratios, resolutions, and measurements
@@ -29,12 +31,16 @@ This project involved the implementation of the functionality and behavior of a 
   <img src="media/psi.jpg" width="280">
 </p>
 
+
+## Part 2: Motion Control
+With the robot able to balance, the team then moved onto adding movement functionality, as well as methods to more accurately determine its relative position.
+
 ### *Manual & Autonomous Control*
 - ``balancebot/balancebot.c`` : manual and autonomous modes determine whether robot takes in steering inputs from controller or executes autonomous task, per competition tasks
   - Manual: increments reference wheel position and heading angle according to two directional sticks on controller
   - Autonomous: sets a destination point at the end of desired trajectory vector, then increments reference wheel position and heading angle values to travel along it
 
-### *Odometry & Motion Control*
+### *Odometry*
 <p align="center">
   <img src="media/odometry.jpg" width="720">
 </p>
@@ -51,8 +57,9 @@ This project involved the implementation of the functionality and behavior of a 
   <img src="media/compare.jpg" width="480">
 </p>
 
+
 ## Competition/Challenges
-At the end of the project period, all teams in the class pitted their robots against one another in four different events. Hence, functions that would allow the BalanceBot to complete these tasks were created. Our team successfully completed all four tasks.
+At the end of the project period, all teams in the class pitted their robots against one another in four different events. Hence, functions that would allow the Balancebot to complete these tasks were created. Our team successfully completed all four tasks.
 
 - ***Balancing on the Mark:*** autonomously stay balanced within 10cm of a target point for 20 seconds, and upright when external forces/disturbances are applied
 
