@@ -1,7 +1,5 @@
 # Balancebot
-The Balancebot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. It was carried out with two other teammates, Ziyue Zhou and Yufei Zhu.
-
-This project involved the implementation of the functionality and behavior of a Balancebot, a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) in C was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU.
+The Balancebot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. It involved programming the functionality of a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) in C was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU. This project was carried out with two other teammates, Ziyue Zhou and Yufei Zhu.
 
 
 ## Part 1: Balancing
